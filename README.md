@@ -21,7 +21,7 @@ Por medio de las opciones de creación se selecciono (Babel - Router - Vuex - CS
 >API
 
 Requisitos para desarrollarla
-DOG API (https://pokeapi.co/)
+POKE API (https://pokeapi.co/)
 
 USUARIOS DE PRUEBA
 ale.ale@gmail.com //
