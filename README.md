@@ -1,9 +1,10 @@
 # Food Dish (Reservación de Restaurant)
 
 ##Descripción del Proyecto:
-En **Food Dish** se encuentra un espacio ideal para los amantes de la comida. Ofrece cocina tradicional con toques de modernidad. El restaurante aprovecha los productos de la zona ( excelentes carnes, salazones, pulpo, productos de la huerta, pescados, fettucine con pollo, rissoto…) combinándo nuevos sabores y texturas.
 
->Página web oficial del restaurante para poder realizar solicitud de pedidos con opción a delivery o servicio en el local Food Dish, permitiendo poder tener el mejor servicio para nuestros clientes.
+En **Food Dish** se encuentra un espacio ideal para los amantes de la comida. Ofrece cocina tradicional con toques de modernidad.
+
+>Página web oficial del restaurante para poder administrar todas las  solicitudes de pedidos de los clientes de Food Dish, favoreciendo el crecimiento del local, no solo optimizando sus recursos, sino también mejorar su competitividad y tomar mejores decisiones que permitan crecimiento y asi poder tener el mejor servicio para los comensales.
 
 ![Esta es una imagen](https://myoctocat.com/assets/images/octocats/octocat-17.png)
 
