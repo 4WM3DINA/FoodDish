@@ -63,8 +63,8 @@
                         </v-col>
                         <v-col cols="12">
                           <v-text-field
-                            label="Cantidad de Personas Adultas"
-                            v-model.number="foods.personadult"
+                            label="Cantidad de Personas"
+                            v-model.number="foods.amountofpeople"
                             type="number"
                             min="0"
                             :rules="textRules"
@@ -73,18 +73,16 @@
                         </v-col>
                         <v-col cols="12">
                           <v-text-field
-                            label="Cantidad de Niños"
-                            v-model.number="foods.kids"
-                            type="number"
-                            min="0"
-                            :rules="kidsRules"
+                            label="Método de Pago (Efectivo/Tarjeta o Transferencia)"
+                            v-model.number="foods.pay"
+                            :rules="payRules"
                             required
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12">
                           <v-text-field
-                            label="Lugar Para Comer: (Terraza/Salón Principal o Delivery) "
-                            v-model="foods.place"
+                            label="Servicio: (Local o Delivery) "
+                            v-model="foods.service"
                             :rules="textRules"
                             required
                           ></v-text-field>
@@ -168,8 +166,8 @@
       </v-dialog>
      <InformationView
         icon="mdi-account-group"
-        :comp="totalPersonadult"
-        text="Cantidad total de personas adultas"
+        :comp="totalAmountofpeople"
+        text="Cantidad de Personas"
         outlineColor="#a63eb8"
         textColor="#a63eb8"
         iconColor="#a63eb8"
@@ -177,8 +175,8 @@
       />
       <InformationView
         icon="mdi-account-multiple-check"
-        :comp="allKids"
-        text="Cantidad total de niños"
+        :comp="allPay"
+        text="Método de Pago"
         outlineColor="#3da1f1"
         textColor="#3da1f1"
         iconColor="#3da1f1"
@@ -216,9 +214,9 @@ export default {
       foods: {
         name: "",
         price: "",
-        place: "",
-        personadult: "",
-        kids: "",
+        service: "",
+        amountofpeople: "",
+        pay: "",
         completed: false,
         date: date,
         description: "",
@@ -232,11 +230,11 @@ export default {
           sortable: false,
           value: "name",
         },
-        { text: "Adultos", value: "personadult", align: "center",
+        { text: "Cantidad de Personas", value: "amountofpeople", align: "center",
           sortable: false },
-        { text: "Niños", value: "kids" , align: "center",
+        { text: "Método de Pago", value: "pay" , align: "center",
           sortable: false },
-        { text: "Lugar", value: "place" , align: "center",
+        { text: "Lugar", value: "service" , align: "center",
           sortable: false },
         { text: "Precio", value: "price" , align: "center",
           sortable: false },
@@ -253,10 +251,8 @@ export default {
       dialogDelete: false,
       valid: false,
       textRules: [(v) => !!v || "Field is required"],
-      kidsRules: [
-        (v) =>
-          v <= this.foods.personadult ||
-          "More students than available spaces",
+      payRules: [
+        (v) => !!v || "Field is required"
       ],
       idDelete: "",
       idEdit: "",
@@ -277,7 +273,6 @@ export default {
       this.dialog = false;
     },
     deleteFoods() {
-      console.log(this.idDelete);
       this.delete_foods(this.idDelete);
       this.closeDelete();
     },
@@ -290,7 +285,6 @@ export default {
       this.dialogDelete = true;
     },
     clickUpdate(id) {
-      console.log(id);
       this.idEdit = id;
       this.$router.push({ path: `/edit/${this.idEdit}` });
     },
@@ -335,14 +329,14 @@ export default {
   computed: {
     ...mapState(["food"]),
     ...mapGetters(["completedFoodCount"]),
-    totalPersonadult() {
+    totalAmountofpeople() {
       return this.food.reduce(
-        (acc, cur) => acc + Number(cur.personadult),
+        (acc, cur) => acc + Number(cur.amountofpeople),
         0
       );
     },
-    allKids() {
-      return this.food.reduce((acc, cur) => acc + Number(cur.kids), 0);
+    allPay() {
+      return this.food.reduce((acc, cur) => acc + Number(cur.pay), 0);
     },
     totalFood() {
       return this.food.length;
@@ -369,7 +363,7 @@ let date =
 </script>
 
 <style>
-#totalPersonadult {
+#totalAmountofpeople {
   outline: 1px solid #a63eb8;
 }
 </style>

@@ -4,7 +4,6 @@
       <h1 class="display-3 text-center mb-5 font-weight-medium text-decoration-underline white--text">
         Lista de Pedidos
       </h1>
-      <hr />
     </v-col>
     <v-row wrap justify-space-around>
       <v-col
@@ -28,15 +27,15 @@
                     <h4 class="font-weight-bold">
                       ${{ item.price.toLocaleString() }}</h4
                     >
-                    Duración: {{ item.place }}
+                    Servicio: {{ item.service }}
                   </v-col>
                 </v-row>
               </v-timeline-item>
               <v-timeline-item color="light-green darken-4" small>
                 <v-row class>
                   <v-col class="font-weight-regular body-1" cols="6">
-                    <h4>Personas Adultas:</h4>
-                      {{ item.personadult }}
+                    <h4>Cantidad de Personas:</h4>
+                      {{ item.amountofpeople }}
                     <h4>Pedido Completado:</h4> {{ chipState(item.completed) }}
                   </v-col>
                 </v-row>
@@ -51,7 +50,7 @@
               <v-timeline-item color="blue" small>
                 <v-row class>
                   <v-col class="font-weight-regular body-1" cols="5">
-                    <h4>Cantidad de Niños:</h4> {{ item.kids }}
+                    <h4>Método de Pago:</h4> {{ item.pay }}
                   </v-col>
                 </v-row>
               </v-timeline-item>

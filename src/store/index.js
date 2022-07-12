@@ -58,14 +58,14 @@ export default new Vuex.Store({
         await addDoc(collection(db, "food"), {
           name: foods.name,
           price: foods.price,
-          place: foods.place,
-          personadult: foods.personadult,
+          service: foods.service,
+          amountofpeople: foods.amountofpeople,
           completed: foods.completed,
           date: foods.date,
           description: foods.description,
           src: foods.src,
           notes: foods.notes,
-          kids: foods.kids,
+          pay: foods.pay,
           uid: auth.currentUser.uid,
         });
       } catch (error) {
@@ -86,14 +86,14 @@ export default new Vuex.Store({
         await updateDoc(docRef, {
           name: foods.name,
           price: foods.price,
-          place: foods.place,
-          personadult: foods.personadult,
+          service: foods.service,
+          amountofpeople: foods.amountofpeople,
           completed: foods.completed,
           date: foods.date,
           description: foods.description,
           src: foods.src,
           notes: foods.notes,
-          kids: foods.kids,
+          pay: foods.pay,
         });
       } catch (error) {
         console.log(error);

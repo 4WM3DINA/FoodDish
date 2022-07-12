@@ -26,8 +26,8 @@
           </v-col>
           <v-col cols="12">
             <v-text-field
-              label="Cantidad de Personas Adultas"
-              v-model.number="foods.personadult"
+              label="Cantidad de Personas"
+              v-model.number="foods.amountofpeople"
               type="number"
               min="0"
               :rules="textRules"
@@ -36,18 +36,16 @@
           </v-col>
           <v-col cols="12">
             <v-text-field
-              label="Cantidad de Niños"
-              v-model.number="foods.kids"
-              type="number"
-              min="0"
-              :rules="kidsRules"
+              label="Método de Pago (Efectivo/Tarjeta o Transferencia)"
+              v-model.number="foods.pay"
+              :rules="payRules"
               required
             ></v-text-field>
           </v-col>
           <v-col cols="12">
             <v-text-field
-              label="Lugar Para Comer: (Terraza/Salón Principal o Delivery)"
-              v-model="foods.place"
+              label="Servicio: (Local o Delivery)"
+              v-model="foods.service"
               :rules="textRules"
               required
             ></v-text-field>
@@ -123,9 +121,9 @@ export default {
       foods: {
         name: "",
         price: "",
-        place: "",
-        personadult: "",
-        kids: "",
+        service: "",
+        amountofpeople: "",
+        pay: "",
         completed: false,
         date: "",
         description: "",
@@ -133,10 +131,8 @@ export default {
         notes: "",
       },
       textRules: [(v) => !!v || "Field is required"],
-      kidsRules: [
-        (v) =>
-          v <= this.foods.personadult ||
-          "More students than available spaces",
+      payRules: [
+        (v) => !!v || "Field is required"
       ],
       valid: false,
     };

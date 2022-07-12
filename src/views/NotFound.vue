@@ -1,9 +1,10 @@
 <template>
   <div class="fondo">
-    <h1>UPPS... LA PAGINA QUE ESTAS BUSCANDO NO EXISTE</h1>
+    <v-container>
     <v-img :aspect-ratio="16/9"
       :width="width"
-      src="https://www.myphukettravel.com/myphukettravel/public/assets/front-end/images/404.gif"></v-img>
+      src="https://www.myphukettravel.com/myphukettravel/public/assets/front-end/images/404.gif" class="mt-5"></v-img>
+    </v-container>
   </div>
 </template>
 

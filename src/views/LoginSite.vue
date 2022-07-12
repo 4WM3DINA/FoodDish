@@ -73,7 +73,6 @@ export default {
           this.user.email,
           this.user.password
         );
-        console.log(userCredential);
         this.$router.push("/home");
       } catch (error) {
         console.log(error.code);

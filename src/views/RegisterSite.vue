@@ -125,7 +125,6 @@ export default {
           this.user.email,
           this.user.password
         );
-        console.log(userCredential);
         this.$router.push("/login");
       } catch (error) {
         console.log(error.code);
