@@ -2,8 +2,8 @@
   <div>
     <v-app-bar app color="orange darken-4" dark elevation="24">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title class="font-weight-medium" style="color: #fce4ec"
-        >FOOD DISH
+      <v-toolbar-title class="font-weight-medium" style="color: #fce4ec">
+        FOOD DISH
         <v-icon large color="white" class="mr-3">
           mdi-food
         </v-icon></v-toolbar-title
@@ -88,6 +88,13 @@
             </v-list-item-icon>
             <v-list-item-title>Administración</v-list-item-title>
           </v-list-item>
+
+           <v-list-item to="/paymethod" v-if="user">
+            <v-list-item-icon>
+              <v-icon color="purple">mdi-cash-multiple</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Método de Pago</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -118,6 +125,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-application a{
+  color: #fce4ec;
+  text-decoration: none;
+}
+</style>
 
 
 

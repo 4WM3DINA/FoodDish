@@ -1,9 +1,9 @@
 <template>
   <v-container fluid>
     <v-col cols="12">
-      <h1 class="display-3 text-center mb-5 font-weight-medium text-decoration-underline white--text">
-        Lista de Pedidos
-      </h1>
+      <v-alert color="#C51" dark icon="mdi-clipboard-list-outline"  border="left" prominent class="display-1 text-center font-weight-medium  black--text">
+      Lista de Pedidos
+    </v-alert>
     </v-col>
     <v-row wrap justify-space-around>
       <v-col

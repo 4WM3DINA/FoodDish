@@ -1,9 +1,14 @@
 <template>
   <v-container fluid>
     <v-col cols="12">
-        <h1 class="display-3 mb-5 font-weight-medium text-center text-decoration-underline white--text">Administración Menús.</h1>
-        <v-btn color="purple" class="white--text mb-3"  @click="moreFoods()"
-          >AGREGAR MENÚ</v-btn>
+      <h1
+        class="display-3 mb-5 font-weight-medium text-center text-decoration-underline white--text"
+      >
+        Administración Menús.
+      </h1>
+      <v-btn color="purple" class="white--text mb-3" @click="moreFoods()"
+        >AGREGAR MENÚ</v-btn
+      >
     </v-col>
     <v-col cols="12">
       <v-card class="mx-auto" cols="12">
@@ -28,18 +33,20 @@
               <v-icon small class="mr-2" @click="clickUpdate(item.id)">
                 mdi-pencil
               </v-icon>
-              <v-icon small @click="clickDelete(item.id)">
-                mdi-delete
-              </v-icon>
+              <v-icon small @click="clickDelete(item.id)"> mdi-delete </v-icon>
             </template>
           </v-data-table>
           <template>
             <v-row justify="center">
               <v-dialog v-model="dialog" max-width="800px">
                 <v-card>
-                  <v-card-title> 
+                  <v-card-title>
                     <v-col cols="12">
-                      <h4 class="display-1 mb-5 font-weight-medium mx-auto ">Agregando Menú</h4>
+                      <h4
+                        class="display-1 mb-5 font-weight-medium mx-auto text-center"
+                      >
+                        AGREGANDO MENÚ
+                      </h4>
                     </v-col>
                   </v-card-title>
                   <v-card-text>
@@ -101,13 +108,12 @@
                           <v-text-field
                             label="Notas al Chef"
                             v-model="foods.notes"
-                            :rules="textRules"
                             required
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12">
                           <v-text-field
-                            label="Fecha de Pedido"
+                            label="Fecha de Pedido (YYYY-MM-DD)"
                             v-model="foods.date"
                             :rules="textRules"
                             required
@@ -126,7 +132,8 @@
                     </v-container>
                   </v-card-text>
                   <v-row>
-                    <v-btn block
+                    <v-btn
+                      block
                       class="mx-auto mb-2"
                       color="success"
                       :disabled="!valid"
@@ -135,13 +142,23 @@
                       AGREGAR
                     </v-btn>
 
-                    <v-btn block color="error" class="mx-auto mb-2" @click="reset">
+                    <v-btn
+                      block
+                      color="error"
+                      class="mx-auto mb-2"
+                      @click="reset"
+                    >
                       LIMPIAR FORMULARIO
                     </v-btn>
 
-                    <v-btn block class="mx-auto" color="warning" @click="resetValidation">
+                    <v-btn
+                      block
+                      class="mx-auto"
+                      color="warning"
+                      @click="resetValidation"
+                    >
                       LIMPIAR VALIDACIÓN
-                    </v-btn>     
+                    </v-btn>
                   </v-row>
                 </v-card>
               </v-dialog>
@@ -164,28 +181,19 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-     <InformationView
+      <InformationView
         icon="mdi-account-group"
         :comp="totalAmountofpeople"
-        text="Cantidad de Personas"
+        text="Cantidad de Personas:"
         outlineColor="#a63eb8"
         textColor="#a63eb8"
         iconColor="#a63eb8"
         backgroundColor="#f5f5dc"
       />
       <InformationView
-        icon="mdi-account-multiple-check"
-        :comp="allPay"
-        text="Método de Pago"
-        outlineColor="#3da1f1"
-        textColor="#3da1f1"
-        iconColor="#3da1f1"
-        backgroundColor="#f5f5dc"
-      />
-      <InformationView
         icon="mdi-block-helper"
         :comp="completedFoodCount"
-        text="Cantidad de pedidos completados"
+        text="Cantidad de pedidos completados:"
         outlineColor="#e8296a"
         textColor="#e8296a"
         iconColor="#e8296a"
@@ -194,7 +202,7 @@
       <InformationView
         icon="mdi-bell-ring"
         :comp="totalFood"
-        text="Cantidad total de pedidos"
+        text="Cantidad total de pedidos:"
         outlineColor="#fd5f2d"
         textColor="#fd5f2d"
         iconColor="#fd5f2d"
@@ -230,44 +238,59 @@ export default {
           sortable: false,
           value: "name",
         },
-        { text: "Cantidad de Personas", value: "amountofpeople", align: "center",
-          sortable: false },
-        { text: "Método de Pago", value: "pay" , align: "center",
-          sortable: false },
-        { text: "Lugar", value: "service" , align: "center",
-          sortable: false },
-        { text: "Precio", value: "price" , align: "center",
-          sortable: false },
-        { text: "Estado", value: "completed" , align: "center",
-          sortable: false },
-        { text: "Fecha pedido", value: "date" , align: "center",
-          sortable: false },
-        { text: "Teléfono", value: "description" , align: "center",
-          sortable: false },
-        { text: "Acciones", value: "actions" , align: "center",
-          sortable: false },
+        {
+          text: "Cantidad de Personas",
+          value: "amountofpeople",
+          align: "center",
+          sortable: false,
+        },
+        {
+          text: "Método de Pago",
+          value: "pay",
+          align: "center",
+          sortable: false,
+        },
+        { text: "Lugar", value: "service", align: "center", sortable: false },
+        { text: "Precio", value: "price", align: "center", sortable: false },
+        {
+          text: "Estado",
+          value: "completed",
+          align: "center",
+          sortable: false,
+        },
+        {
+          text: "Fecha pedido",
+          value: "date",
+          align: "center",
+          sortable: false,
+        },
+        {
+          text: "Teléfono",
+          value: "description",
+          align: "center",
+          sortable: false,
+        },
+        {
+          text: "Acciones",
+          value: "actions",
+          align: "center",
+          sortable: false,
+        },
       ],
       dialog: false,
       dialogDelete: false,
       valid: false,
-      textRules: [(v) => !!v || "Field is required"],
-      payRules: [
-        (v) => !!v || "Field is required"
-      ],
+      textRules: [(v) => !!v || "Este campo es requerido"],
+      payRules: [(v) => !!v || "Este campo es requerido"],
       idDelete: "",
       idEdit: "",
     };
   },
-   components: {
+  components: {
     InformationView,
   },
   methods: {
-    ...mapActions([
-      "add_foods",
-      "delete_foods",
-      "update_foods",
-      "get_food",
-    ]),
+    ...mapActions(["add_foods", "delete_foods", "update_foods", "get_food"]),
     addFoods() {
       this.add_foods({ ...this.foods });
       this.dialog = false;
@@ -280,7 +303,6 @@ export default {
       this.dialog = true;
     },
     clickDelete(id) {
-      console.log(id);
       this.idDelete = id;
       this.dialogDelete = true;
     },
@@ -334,9 +356,6 @@ export default {
         (acc, cur) => acc + Number(cur.amountofpeople),
         0
       );
-    },
-    allPay() {
-      return this.food.reduce((acc, cur) => acc + Number(cur.pay), 0);
     },
     totalFood() {
       return this.food.length;

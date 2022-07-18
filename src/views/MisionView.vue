@@ -1,4 +1,5 @@
 <template>
+  <!-- Misión -->
   <div>
     <v-alert color="#2A3B4D" dark dense>
       <h1 class="text-center text-h3 text-center font-weight-black">Misión</h1>

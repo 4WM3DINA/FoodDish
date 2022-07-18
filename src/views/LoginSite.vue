@@ -1,5 +1,6 @@
 <template>
-  <div class="mt-10" style="background-color:orange; border-radius: 15px;">
+<!-- Login de Usuario -->
+  <div class="mt-10" style="background-color: orange; border-radius: 15px">
     <v-row justify="center">
       <v-col cols="12">
         <h1 class="text-left darj--text text-center">Login de Usuario</h1>
@@ -12,7 +13,8 @@
             v-model="user.email"
             label="Email"
             :rules="emailRules"
-            required class="bg-white"
+            required
+            class="bg-white"
           >
           </v-text-field>
           <v-text-field
@@ -28,10 +30,20 @@
           >
           </v-text-field>
 
-            <v-btn block color="success" class="mx-auto mb-2" :disabled="!valid" @click="loginUser">Iniciar</v-btn>
-            <v-btn block color="error" class="mx-auto mb-2"  @click="reset">Limpiar Formulario</v-btn>
-            <v-btn block color="warning" class="mx-auto" @click="reset">Limpiar Validación</v-btn>
-        
+          <v-btn
+            block
+            color="success"
+            class="mx-auto mb-2"
+            :disabled="!valid"
+            @click="loginUser"
+            >Iniciar</v-btn
+          >
+          <v-btn block color="error" class="mx-auto mb-2" @click="reset"
+            >Limpiar Formulario</v-btn
+          >
+          <v-btn block color="warning" class="mx-auto" @click="reset"
+            >Limpiar Validación</v-btn
+          >
         </v-col>
       </v-row>
     </v-form>
@@ -74,9 +86,7 @@ export default {
           this.user.password
         );
         this.$router.push("/home");
-      } catch (error) {
-        console.log(error.code);
-      }
+      } catch (error) {}
     },
     reset() {
       this.$refs.formRegister.reset();
@@ -86,7 +96,7 @@ export default {
 </script>
 
 <style scoped>
-  .v-btn {
-    letter-spacing: 0;
-  }
+.v-btn {
+  letter-spacing: 0;
+}
 </style>

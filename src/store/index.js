@@ -48,9 +48,7 @@ export default new Vuex.Store({
           });
           commit("GET_FOOD", food);
         });
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     },
 
     async add_foods({ commit }, foods) {
@@ -68,17 +66,13 @@ export default new Vuex.Store({
           pay: foods.pay,
           uid: auth.currentUser.uid,
         });
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     },
     async delete_foods({ commit }, id) {
       try {
         const docRef = doc(db, "food", id);
         await deleteDoc(docRef);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     },
     async update_foods({ commit }, foods) {
       try {
@@ -95,12 +89,8 @@ export default new Vuex.Store({
           notes: foods.notes,
           pay: foods.pay,
         });
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     },
   },
   modules: {},
 });
-
-

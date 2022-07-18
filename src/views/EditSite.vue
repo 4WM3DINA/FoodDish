@@ -130,9 +130,9 @@ export default {
         src: "",
         notes: "",
       },
-      textRules: [(v) => !!v || "Field is required"],
+      textRules: [(v) => !!v || "Este campo es requerido"],
       payRules: [
-        (v) => !!v || "Field is required"
+        (v) => !!v || "Este campo es requerido"
       ],
       valid: false,
     };

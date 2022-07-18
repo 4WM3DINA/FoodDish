@@ -1,18 +1,22 @@
 <template>
   <v-app class="app">
+    <!-- Navbar -->
     <AppNavigation />
     <v-main>
       <router-view />
     </v-main>
+    <!-- Footer -->
     <FooterWeb />
   </v-app>
 </template>
 
+<!-- Importaciones -->
 <script>
 import AppNavigation from "@/components/AppNavigation.vue";
 import FooterWeb from "@/components/FooterWeb.vue";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase";
+
 
 export default {
   name: "App",

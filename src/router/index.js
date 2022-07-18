@@ -5,6 +5,7 @@ import HomeSite from "../views/HomeSite.vue";
 import LoginSite from "../views/LoginSite.vue";
 import RegisterSite from "../views/RegisterSite.vue";
 import AdministrationSite from "../views/AdministrationSite.vue";
+import PayMethod from "../views/PayMethod.vue";
 import EditSite from "../views/EditSite.vue";
 import MisionView from "../views/MisionView.vue";
 import VisionView from "../views/VisionView.vue";
@@ -57,6 +58,14 @@ const routes = [
     path: "/admin",
     name: "admin",
     component: AdministrationSite,
+    meta: {
+      auth: true,
+    },
+  },
+  {
+    path: "/paymethod",
+    name: "paymethod",
+    component: PayMethod,
     meta: {
       auth: true,
     },

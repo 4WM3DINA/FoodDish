@@ -1,12 +1,16 @@
 <template>
+  <!-- Vista Principal -->
   <v-container>
+    <HelloWorld msg="Bienvenidos!" />
     <v-row>
       <v-carousel :show-arrows="false">
-        <v-carousel-item
+        <v-col cols="12">
+           <v-carousel-item
           v-for="(item, i) in items"
           :key="i"
           :src="item.src"
         ></v-carousel-item>
+        </v-col>
       </v-carousel>
       <StepperView />
       <v-container>
@@ -89,6 +93,7 @@
 
 <script>
 import StepperView from '@/components/StepperView.vue';
+import HelloWorld from '@/components/HelloWorld.vue';
 export default {
     data() {
         return {
@@ -108,7 +113,7 @@ export default {
             ],
         };
     },
-    components: { StepperView }
+    components: { StepperView, HelloWorld }
 };
 </script>
 

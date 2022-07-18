@@ -1,4 +1,5 @@
 <template>
+  <!-- Registro de Usuario -->
   <div class="mt-10" style="background-color: orange; border-radius: 15px">
     <v-row justify="center">
       <v-col cols="12">
@@ -16,9 +17,20 @@
           <h3 class="purple darken-2 text-center white--text">
             Escriba el nombre:
           </h3>
-          <v-text-field label="Escribe tu Pokemón (En Miniscula)" v-model="newSearch" class="mt-3 lime darken-4">
+          <v-text-field
+            label="Escribe tu Pokemón (En Miniscula)"
+            v-model="newSearch"
+            class="mt-3 lime darken-4"
+          >
           </v-text-field>
-          <v-btn type="submit" color="purple darken-2" elevation="2" class="mt-2 white--text"> Buscar</v-btn>
+          <v-btn
+            type="submit"
+            color="purple darken-2"
+            elevation="2"
+            class="mt-2 white--text"
+          >
+            Buscar</v-btn
+          >
         </v-form>
         <div class="summary--container text-center">
           <div class="image--container">
@@ -127,7 +139,6 @@ export default {
         );
         this.$router.push("/login");
       } catch (error) {
-        console.log(error.code);
         switch (error.code) {
           case "auth/email-already-in-use":
             alert("El correo ya está siendo utilizado");
