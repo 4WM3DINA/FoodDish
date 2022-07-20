@@ -65,15 +65,15 @@ export default {
       dialog: false,
       show1: false,
       emailRules: [
-        (v) => (v && !!v.trim()) || "Write something, not just spaces",
-        (v) => !!v || "Doesn't exist...",
+        (v) => (v && !!v.trim()) || "Escribe algo, no solo espacios.",
+        (v) => !!v || "Por favor, escriba correo electrónico.",
         (v) =>
-          /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(v) || "Incorrect email format",
+          /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(v) || "Formato incorrecto",
       ],
       passwordRules: [
-        (v) => !!v || "Doesn't exist...",
-        (v) => (v && v.length > 5) || "More than 6 characters required",
-        (v) => (v && v.length < 12) || "Less than 12 characters required",
+        (v) => !!v || "Por favor, ingrese la contraseña.",
+        (v) => (v && v.length > 5) || "Se requieren más de 6 caracteres.",
+        (v) => (v && v.length < 12) || "Se requieren menos de 12 caracteres.",
       ],
     };
   },
@@ -86,7 +86,9 @@ export default {
           this.user.password
         );
         this.$router.push("/home");
-      } catch (error) {}
+      } catch (error) {
+        alert("Contraseña incorrecta, intente de nuevo");
+      }
     },
     reset() {
       this.$refs.formRegister.reset();

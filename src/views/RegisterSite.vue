@@ -109,20 +109,21 @@ export default {
       },
       show1: false,
       emailRules: [
-        (v) => (v && !!v.trim()) || "Write something, not just spaces",
-        (v) => !!v || "Please type email",
+        (v) => (v && !!v.trim()) || "Escribe algo, no solo espacios.",
+        (v) => !!v || "Por favor, escriba correo electrónico.",
         (v) =>
-          /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(v) || "Incorrect email format",
+          /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(v) || "Formato incorrecto.",
       ],
       passwordRules: [
-        (v) => (v && !!v.trim()) || "Write something, not just spaces",
-        (v) => !!v || "Please type password",
-        (v) => (v && v.length > 5) || "More than 6 characters required",
-        (v) => (v && v.length < 12) || "Less than 12 characters required",
+        (v) => (v && !!v.trim()) || "Escribe algo, no solo espacios.",
+        (v) => v === this.user.password || "No coinciden las contraseñas",
+        (v) => !!v || "Por favor, escriba la contraseña.",
+        (v) => (v && v.length > 5) || "Se requieren más de 6 caracteres.",
+        (v) => (v && v.length < 12) || "Se requieren menos de 12 caracteres.",
       ],
       repasswordRules: [
         (v) => !!v || "No existe",
-        (v) => v === this.user.password || "No coinciden las contraseñas",
+        (v) => v === this.user.repassword || "No coinciden las contraseñas",
       ],
     };
   },

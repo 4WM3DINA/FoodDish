@@ -52,7 +52,7 @@
           </v-col>
           <v-col cols="12">
             <v-text-field
-              label="Fecha de Pedido"
+              label="Fecha de Pedido (YYYY-MM-DD)"
               v-model="foods.date"
               :rules="textRules"
               required
