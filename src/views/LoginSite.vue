@@ -1,5 +1,5 @@
 <template>
-<!-- Login de Usuario -->
+  <!-- Login de Usuario -->
   <div class="mt-10" style="background-color: orange; border-radius: 15px">
     <v-row justify="center">
       <v-col cols="12">
@@ -36,8 +36,9 @@
             class="mx-auto mb-2"
             :disabled="!valid"
             @click="loginUser"
-            >Iniciar</v-btn
           >
+            Iniciar
+          </v-btn>
           <v-btn block color="error" class="mx-auto mb-2" @click="reset"
             >Limpiar Formulario</v-btn
           >
@@ -67,11 +68,10 @@ export default {
       emailRules: [
         (v) => (v && !!v.trim()) || "Escribe algo, no solo espacios.",
         (v) => !!v || "Por favor, escriba correo electrónico.",
-        (v) =>
-          /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(v) || "Formato incorrecto",
+        (v) => /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(v) || "Formato incorrecto",
       ],
       passwordRules: [
-        (v) => !!v || "Por favor, ingrese la contraseña.",
+        (v) => !!v || "Por favor, repite la contraseña.",
         (v) => (v && v.length > 5) || "Se requieren más de 6 caracteres.",
         (v) => (v && v.length < 12) || "Se requieren menos de 12 caracteres.",
       ],
@@ -86,9 +86,7 @@ export default {
           this.user.password
         );
         this.$router.push("/home");
-      } catch (error) {
-        alert("Contraseña incorrecta, intente de nuevo");
-      }
+      } catch (error) {}
     },
     reset() {
       this.$refs.formRegister.reset();

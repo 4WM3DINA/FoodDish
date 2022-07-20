@@ -116,7 +116,6 @@ export default {
       ],
       passwordRules: [
         (v) => (v && !!v.trim()) || "Escribe algo, no solo espacios.",
-        (v) => v === this.user.password || "No coinciden las contraseñas",
         (v) => !!v || "Por favor, escriba la contraseña.",
         (v) => (v && v.length > 5) || "Se requieren más de 6 caracteres.",
         (v) => (v && v.length < 12) || "Se requieren menos de 12 caracteres.",
