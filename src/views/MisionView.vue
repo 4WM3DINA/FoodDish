@@ -4,7 +4,7 @@
     <v-alert color="#2A3B4D" dark dense>
       <h1 class="text-center text-h3 text-center font-weight-black">Misión</h1>
     </v-alert>
-    <v-alert color="#C51162" dark icon="mdi-crown" border="left" prominent class="text-center">
+    <v-alert color="#C51" dark icon="mdi-crown" border="left" prominent class="text-center">
       “Satisfacer las necesidades gastronómicas de nuestros clientes, ofreciendo alimentos y servicios 
       con la más alta calidad, donde se sobrepasen las expectativas de nuestros clientes y ser un espacio de trabajo que permita la realización personal y el Desarrollo de sus colaboradores en el grupo.
       <br/>

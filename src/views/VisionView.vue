@@ -4,7 +4,7 @@
     <v-alert color="#2A3B4D" dark dense>
       <h1 class="text-center text-h3 text-center font-weight-black">Visión</h1>
     </v-alert>
-    <v-alert color="#C51162" dark icon="mdi-star-shooting-outline" border="left" prominent class="text-center">
+    <v-alert color="#C51" dark icon="mdi-star-shooting-outline" border="left" prominent class="text-center">
       “Duplicar el valor de la compañía ampliando el liderazgo en cada uno de los mercados.
       <br/>
       Siendo el Mejor Restaurante a nivel Regional y nacional" Ser reconocido y preferido a nivel Regional y Nacional, como un grupo de trabajo original, sólido y profesional.”
